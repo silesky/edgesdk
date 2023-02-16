@@ -1,5 +1,7 @@
 window.analytics.ready(() => {
-  console.log(window.analytics.VERSION)
+  console.log(window.analytics.VERSION, "READY...")
+  console.log("test track call!")
+  window.analytics.track("test track")
 })
 
 const createEvent = (eventName, cb, selector) => {
