@@ -1,9 +1,9 @@
 {
   "name": "edgesdk",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "live-server . --browser"
+    "start": "npx live-server ."
   },
   "repository": {
     "type": "git",
@@ -11,9 +11,5 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-  },
-  "devDependencies": {
-    "live-server": "^1.2.2"
-  }
+  "bugs": {}
 }
