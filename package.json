@@ -1,0 +1,19 @@
+{
+  "name": "edgesdk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server . --browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silesky/edgesdk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
