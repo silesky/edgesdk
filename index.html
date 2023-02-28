@@ -1,102 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <script>
-        !function () {
-            var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
-                analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { var t = Array.prototype.slice.call(arguments); t.unshift(e); analytics.push(t); return analytics } }; for (var e = 0; e < analytics.methods.length; e++) { var key = analytics.methods[e]; analytics[key] = analytics.factory(key) } analytics.load = function (key, e) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://unpkg.com/@segment/analytics-next/dist/umd/index.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = e }; analytics._writeKey = "9lSrez3BlfLAJ7NOChrqWtILiATiycoc";; analytics.SNIPPET_VERSION = "4.15.3";
-                analytics.load("9lSrez3BlfLAJ7NOChrqWtILiATiycoc");
-                analytics.page();
+  <style>
+    body {
+      font-family: monospace;
+    }
+
+    #event {
+      margin: 2em 0;
+      min-height: 200px;
+      min-width: 700px;
+    }
+
+  </style>
+
+  <script>
+    !(function () {
+      var analytics = (window.analytics = window.analytics || [])
+      if (!analytics.initialize)
+        if (analytics.invoked)
+          window.console &&
+            console.error &&
+            console.error('Segment snippet included twice.')
+        else {
+          analytics.invoked = !0
+          analytics.methods = [
+            'trackSubmit',
+            'trackClick',
+            'trackLink',
+            'trackForm',
+            'pageview',
+            'identify',
+            'reset',
+            'group',
+            'track',
+            'ready',
+            'alias',
+            'debug',
+            'page',
+            'once',
+            'off',
+            'on',
+            'addSourceMiddleware',
+            'addIntegrationMiddleware',
+            'setAnonymousId',
+            'addDestinationMiddleware',
+          ]
+          analytics.factory = function (e) {
+            return function () {
+              var t = Array.prototype.slice.call(arguments)
+              t.unshift(e)
+              analytics.push(t)
+              return analytics
             }
-        }();
-    </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Seth Silesky's home page">
-    <meta name="author" content="Seth Silesky">
+          }
+          for (var e = 0; e < analytics.methods.length; e++) {
+            var key = analytics.methods[e]
+            analytics[key] = analytics.factory(key)
+          }
+          analytics.load = function (key, e) {
+            var t = document.createElement('script')
+            t.type = 'text/javascript'
+            t.async = !0
+            t.src =
+              "https://seg.edgesdk.uk/magic/ajs/d9728795-38ba-45be-9b8d-c7dbc99bd669"
+            var n = document.getElementsByTagName('script')[0]
+            n.parentNode.insertBefore(t, n)
+            analytics._loadOptions = e
+          }
+          analytics.load()
+          analytics.page()
+        }
+    })()
 
-    <title>Seth Silesky</title>
-
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/animations.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
+  </script>
 </head>
 
 <body>
-
-    <div id="top" class="header">
-        <div class="vert-text">
-            <div class="expandUp">
-                <h1>
-                    Edge SDK
-                </h1>
-            </div>
-            <ul class="list-inline spaced">
-                <li><a href="https://github.com/silesky" target="_blank" title="Github" alt="Github"
-                        onClick="ga('send', '_trackEvent', 'Links', 'Github', 'Github top');"><i
-                            class="fa fa-github fa-3x"></i></a>
-                </li>
-                </li>
-                <li><a href="https:www.linkedin.com/in/sethsilesky" target="_blank" title="LinkedIn" alt="LinkedIn"
-                        onClick="ga('send', '_trackEvent', 'Links', 'LinkedIn', 'LinkedIn top');"><i
-                            class="fa fa-linkedin fa-3x"></i></a>
-                </li>
-            </ul>
-        </div>
-
+  <form>
+    <textarea name="event" id="event">
+{
+  "name": "hi",
+  "properties": { },
+  "traits": { },
+  "options": { }
+}
+    </textarea>
+    <div>
+      <button id="track">Track</button>
+      <button id="identify">Identify</button>
+      <button id="page">Page</button>
     </div>
+  </form>
 
-    <div id="about" class="intro">
-        <div class="container">
-            <div class="row">
-                <div class="text-center">
-                    <h2>This is my website.</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
+  <pre id="ready-logs"></pre>
+  <pre id="logs"></pre>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div id="contact" class="col-md-6 col-md-offset-3 text-center">
-                    <ul class="list-inline">
-                        <li><a href="https://github.com/silesky" target="_blank" title="Github" alt="Github"
-                                onClick="ga('send', '_trackEvent', 'Links', 'Github', 'Github bottom');"><i
-                                    class="fa fa-github fa-2x"></i></a>
-                        </li>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/sethsilesky" target="_blank" title="LinkedIn"
-                                alt="LinkedIn"
-                                onClick="ga('send', '_trackEvent', 'Links', 'LinkedIn', 'LinkedIn bottom');"><i
-                                    class="fa fa-linkedin fa-2x"></i></a>
-                        </li>
-                    </ul>
-                    <ul class="list-unstyled size-m">
-                        <li><i class="fa fa-map-marker"></i> Austin, TX</li>
-                        <li><i class="fa fa-envelope-o"></i> <a href="mailto:seth@sethsilesky.com" target="_blank"
-                                onClick="ga('send', '_trackEvent', 'Links', 'Email', 'Email bottom');">seth@sethsilesky.com</a>
-                        </li>
-                    </ul>
-                    <div class="top-scroll">
-                        <a href="#top" title="Back to top" alt="Back to top"><i
-                                class="fa fa-angle-double-up scroll fa-4x"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <script src="ajs.js"></script>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.scrolldepth.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/main.js"></script>
 </body>
 
 </html>

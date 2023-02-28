@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
+    "dev": "npm run start",
     "start": "npx live-server ."
   },
   "repository": {
